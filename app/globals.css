@@ -1,0 +1,58 @@
+/* ===============================================
+   ESTILOS GLOBALES DEL SISTEMA DE VOTACIÓN
+   Tailwind CSS se encarga de casi todo, aquí solo
+   definimos estilos base adicionales
+   =============================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Estilos base ---------- */
+@layer base {
+  html {
+    /* Hace que el scroll sea suave */
+    scroll-behavior: smooth;
+  }
+  body {
+    /* Tipografía general: fuentes del sistema para velocidad */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  }
+}
+
+/* ---------- Componentes reutilizables ---------- */
+@layer components {
+  /* Botón principal del sistema (color azul del colegio) */
+  .btn-primario {
+    @apply bg-primario text-white font-bold py-3 px-6 rounded-lg 
+           hover:bg-blue-800 active:scale-95 transition-all duration-200
+           disabled:bg-gray-400 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  /* Botón secundario (verde) */
+  .btn-secundario {
+    @apply bg-secundario text-white font-bold py-3 px-6 rounded-lg 
+           hover:bg-green-700 active:scale-95 transition-all duration-200
+           disabled:bg-gray-400 disabled:cursor-not-allowed;
+  }
+
+  /* Botón de acento (amarillo/naranja) */
+  .btn-acento {
+    @apply bg-acento text-white font-bold py-3 px-6 rounded-lg 
+           hover:bg-amber-600 active:scale-95 transition-all duration-200;
+  }
+
+  /* Tarjeta de candidato */
+  .card-candidato {
+    @apply bg-white rounded-2xl shadow-lg border-2 border-gray-100
+           hover:border-primario hover:shadow-xl transition-all duration-300
+           overflow-hidden;
+  }
+
+  /* Inputs de formulario */
+  .input-formulario {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg
+           focus:outline-none focus:border-primario focus:ring-2 focus:ring-blue-200
+           transition-all duration-200 text-lg;
+  }
+}
